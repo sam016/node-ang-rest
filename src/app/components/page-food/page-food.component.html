@@ -1,0 +1,19 @@
+<div class="section-header">
+  <h2>Food list here</h2>
+</div>
+<div class="filters">
+  <h3>Filters</h3>
+  <input type="text" [(ngModel)]="filters.Name" autofocus />
+</div>
+<hr/>
+<div class="food-list">
+  <ul *ngIf="foods">
+    <li class="food" *ngFor="let food of (foods | foodFilter:filters.Name)">
+      <span class="name">{{food.Name}}</span>
+      <span class="price">(₹{{food.Price}})</span>
+    </li>
+  </ul>
+  <p *ngIf="!foods">
+    No food available
+  </p>
+</div>

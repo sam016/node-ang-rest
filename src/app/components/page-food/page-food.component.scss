@@ -1,0 +1,14 @@
+.food-list {
+  max-height: 200px;
+  overflow: auto;
+}
+
+ul {
+  margin: 0;
+}
+
+.food {
+  .price {
+    font-size: 12px;
+  }
+}
