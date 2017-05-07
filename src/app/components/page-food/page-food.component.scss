@@ -3,12 +3,29 @@
   overflow: auto;
 }
 
-ul {
+ul,
+ol {
   margin: 0;
 }
 
 .food {
   .price {
     font-size: 12px;
+  }
+  &.food-nonveg {
+    color: maroon;
+  }
+  &.food-veg {
+    color: darkgreen;
+  }
+}
+
+.filters {
+  div>label:first-child {
+    width: 100px;
+    text-align: right;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
   }
 }

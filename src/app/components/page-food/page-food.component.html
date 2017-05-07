@@ -3,16 +3,29 @@
 </div>
 <div class="filters">
   <h3>Filters</h3>
-  <input type="text" [(ngModel)]="filters.Name" autofocus />
+  <div>
+    <label>Name</label>
+    <input type="text" [(ngModel)]="filters.Name" autofocus />
+  </div>
+  <div>
+    <label>Type</label>
+    <input type="radio" [(ngModel)]="filters.Type" id="radall" value="">
+    <label for="radall">All</label>
+    <input type="radio" [(ngModel)]="filters.Type" id="radveg" value="veg">
+    <label for="radveg">Veg</label>
+    <input type="radio" [(ngModel)]="filters.Type" id="radnonveg" value="nonveg">
+    <label for="radnonveg">Nonveg</label>
+  </div>
+
 </div>
 <hr/>
 <div class="food-list">
-  <ul *ngIf="foods">
-    <li class="food" *ngFor="let food of (foods | foodFilter:filters.Name)">
+  <ol *ngIf="foods">
+    <li class="food food-{{food.Type}}" *ngFor="let food of (foods | foodFilter:filters:filters.Name:filters.Price:filters.Type)">
       <span class="name">{{food.Name}}</span>
       <span class="price">(₹{{food.Price}})</span>
     </li>
-  </ul>
+  </ol>
   <p *ngIf="!foods">
     No food available
   </p>

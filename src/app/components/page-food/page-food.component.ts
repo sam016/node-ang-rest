@@ -28,7 +28,7 @@ export class PageFoodComponent implements OnInit {
 
   private refresh() {
     this.foodApiService.getFoodList()
-      .then(foods => this.foods = foods);
+      .subscribe(foods => this.foods = foods);
   }
 
 }
